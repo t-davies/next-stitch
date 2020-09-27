@@ -2,10 +2,16 @@
 
 exports[`prepare pages 1`] = `
 Array [
+  "example\\\\dist\\\\index-45798799.css",
+  "example\\\\dist\\\\index-d1fe0eb3.js",
+  "example\\\\dist\\\\index-d1fe0eb3.js.map",
+  "example\\\\dist\\\\index-e089d697.js",
+  "example\\\\dist\\\\index-e089d697.js.map",
   "example\\\\dist\\\\pages\\\\about.cjs",
   "example\\\\dist\\\\pages\\\\about.cjs.map",
   "example\\\\dist\\\\pages\\\\about.mjs",
   "example\\\\dist\\\\pages\\\\about.mjs.map",
+  "example\\\\dist\\\\pages\\\\nested\\\\[param]-3037df2b.css",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs.map",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].mjs",

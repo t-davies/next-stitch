@@ -3,6 +3,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import externalPeerDependencies from 'rollup-plugin-peer-deps-external';
 import multipleInputs from 'rollup-plugin-multi-input';
 import resolve from '@rollup/plugin-node-resolve';
+import styles from 'rollup-plugin-styles';
+
+const extensions = ['.js', '.ts', '.tsx', '.jsx'];
 
 export default {
   input: [`./src/pages/**/*.{js,ts,tsx,jsx}`],
@@ -12,26 +15,32 @@ export default {
       entryFileNames: '[name].cjs',
       format: 'cjs',
       exports: 'auto',
-      sourcemap: true
+      sourcemap: true,
+      assetFileNames: '[name]-[hash][extname]'
     },
     {
       dir: 'dist',
       entryFileNames: '[name].mjs',
       format: 'esm',
-      sourcemap: true
+      sourcemap: true,
+      assetFileNames: '[name]-[hash][extname]'
     }
   ],
   plugins: [
     multipleInputs(),
     externalPeerDependencies(),
+    resolve({ extensions }),
     babel({
-      extensions: ['.js', '.ts', '.tsx', '.jsx'],
+      extensions,
       presets: ['next/babel'],
       babelHelpers: 'runtime',
       include: ['src/**/*'],
       exclude: ['node_modules/**']
     }),
-    resolve(),
+    styles({
+      mode: 'extract',
+      autoModules: id => id.includes('.module.')
+    }),
     commonjs()
   ]
 };
