@@ -1,12 +1,8 @@
-import path from 'path';
-import findup from 'find-up';
-import multipleInputs from 'rollup-plugin-multi-input';
-import externalPeerDependencies from 'rollup-plugin-peer-deps-external';
-import resolve from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
-
-const typescriptPath = path.join(process.cwd(), 'node_modules', 'typescript');
+import externalPeerDependencies from 'rollup-plugin-peer-deps-external';
+import multipleInputs from 'rollup-plugin-multi-input';
+import resolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: [`./src/pages/**/*.{js,ts,tsx,jsx}`],
@@ -28,17 +24,14 @@ export default {
   plugins: [
     multipleInputs(),
     externalPeerDependencies(),
+    babel({
+      extensions: ['.js', '.ts', '.tsx', '.jsx'],
+      presets: ['next/babel'],
+      babelHelpers: 'runtime',
+      include: ['src/**/*'],
+      exclude: ['node_modules/**']
+    }),
     resolve(),
-    commonjs(),
-    typescript({
-      declarationDir: 'dist',
-      tsconfig: findup.sync('tsconfig.json'),
-      typescript: require(typescriptPath),
-      tsconfigOverride: {
-        compilerOptions: {
-          jsx: 'react'
-        }
-      }
-    })
+    commonjs()
   ]
 };
