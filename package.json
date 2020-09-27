@@ -1,0 +1,51 @@
+{
+  "name": "next-stitch",
+  "version": "0.0.1",
+  "description": "Stitches together Nextjs applications",
+  "bin": {
+    "next-stitch": "bin/next-stitch"
+  },
+  "scripts": {
+    "format": "prettier --write **/*.{js,json} && standard --fix",
+    "lint": "standard",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "docs",
+    "bin"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "find-up": "^5.0.0",
+    "gluegun": "latest",
+    "rollup": "^2.28.2",
+    "rollup-plugin-multi-input": "^1.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-typescript2": "^0.27.3"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "prettier": "^1.12.1",
+    "jest": "^24.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true
+  }
+}

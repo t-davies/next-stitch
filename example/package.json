@@ -1,0 +1,24 @@
+{
+  "name": "next-stitch-test-package",
+  "version": "1.0.0",
+  "description": "This is a package to run tests against",
+  "main": " ",
+  "scripts": {
+    "dev": "next",
+    "build": "next-stitch -p module",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^4.0.3"
+  }
+}

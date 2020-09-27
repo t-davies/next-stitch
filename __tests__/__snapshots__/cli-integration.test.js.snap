@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prepare pages 1`] = `
+Array [
+  "example\\\\dist\\\\pages\\\\about.cjs",
+  "example\\\\dist\\\\pages\\\\about.cjs.map",
+  "example\\\\dist\\\\pages\\\\about.mjs",
+  "example\\\\dist\\\\pages\\\\about.mjs.map",
+  "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs",
+  "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs.map",
+  "example\\\\dist\\\\pages\\\\nested\\\\[param].mjs",
+  "example\\\\dist\\\\pages\\\\nested\\\\[param].mjs.map",
+]
+`;
