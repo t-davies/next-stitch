@@ -40,7 +40,7 @@ module.exports = {
     }
 
     try {
-      await filesystem.remove(path.join(process.cwd(), 'dist'));
+      await filesystem.remove('./dist');
       await rollup(type, system);
       print.success(`[success] ${type} bundle created`);
     } catch (err) {
