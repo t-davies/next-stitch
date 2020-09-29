@@ -1,27 +1,23 @@
 {
-  "name": "@next-stitch/next-stitch-test-package",
-  "version": "1.2.0",
+  "name": "@next-stitch/next-stitch-test-shell",
+  "version": "1.0.0",
   "description": "This is a package to run tests against",
-  "files": [
-    "dist"
-  ],
+  "main": " ",
   "scripts": {
     "dev": "next",
-    "build": "next-stitch -p module",
-    "prepare": "npm run build"
+    "build": "next build",
+    "start": "next start"
   },
   "author": "",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
+    "@next-stitch/next-stitch-test-package": "^1.2.0",
     "next": "^9.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.49",
-    "next": "^9.5.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "typescript": "^4.0.3"
   }
 }

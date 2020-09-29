@@ -25,6 +25,7 @@
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "find-up": "^5.0.0",
+    "glob": "^7.1.6",
     "gluegun": "latest",
     "rollup": "^2.28.2",
     "rollup-plugin-multi-input": "^1.1.1",

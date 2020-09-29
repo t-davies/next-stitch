@@ -38,7 +38,7 @@ export default {
       exclude: ['node_modules/**']
     }),
     styles({
-      mode: 'extract',
+      mode: ['extract', 'bundle.css'],
       autoModules: id => id.includes('.module.')
     }),
     commonjs()
