@@ -1,3 +1,7 @@
 {
-  "packages": ["@next-stitch/next-stitch-test-package"]
+  "packages": ["@next-stitch/next-stitch-test-package"],
+  "pages": {
+    "directory": "./src/pages",
+    "extension": "ts"
+  }
 }

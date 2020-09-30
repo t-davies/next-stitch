@@ -13,6 +13,10 @@ const relativeToAbsolutePath = (fileName, packageName) =>
 const parseModuleExports = module =>
   typeof module === 'object' ? Object.keys(module) : ['default'];
 
+const preludes = {
+  ts: '/* @ts-ignore */'
+};
+
 module.exports = {
   name: 'stitch',
   alias: ['s'],
@@ -25,7 +29,10 @@ module.exports = {
     } = toolbox;
 
     const output = path.join(process.cwd(), 'src', 'pages');
-    const { packages } = loadConfig('stitch', process.cwd());
+    const {
+      packages,
+      pages: { directory: target = './pages/', extension = 'js' }
+    } = loadConfig('stitch', process.cwd());
 
     if (!Array.isArray(packages)) {
       error('bad config, missing "packages" array');
@@ -53,9 +60,10 @@ module.exports = {
         const exports = parseModuleExports(module);
 
         await generate({
-          template: 'page.ts.ejs',
-          target: `${withoutExtension}.ts`.replace('./', './src/'),
+          template: `page.ejs`,
+          target: `${withoutExtension}.${extension}`.replace('./pages', target),
           props: {
+            prelude: preludes[extension],
             eol: filesystem.eol,
             exports: exports,
             packageModulePath: relativeToPackagePath(
