@@ -28,7 +28,6 @@ module.exports = {
       print: { info, warning, error, debug, success }
     } = toolbox;
 
-    const output = path.join(process.cwd(), 'src', 'pages');
     const {
       packages,
       pages: { directory: target = './pages/', extension = 'js' }
