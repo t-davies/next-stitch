@@ -2,7 +2,7 @@
 
 exports[`prepare pages 1`] = `
 Array [
-  "example\\\\dist\\\\index-45798799.css",
+  "example\\\\dist\\\\bundle-22e3f067.css",
   "example\\\\dist\\\\index-d1fe0eb3.js",
   "example\\\\dist\\\\index-d1fe0eb3.js.map",
   "example\\\\dist\\\\index-e089d697.js",
@@ -11,10 +11,23 @@ Array [
   "example\\\\dist\\\\pages\\\\about.cjs.map",
   "example\\\\dist\\\\pages\\\\about.mjs",
   "example\\\\dist\\\\pages\\\\about.mjs.map",
-  "example\\\\dist\\\\pages\\\\nested\\\\[param]-3037df2b.css",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].cjs.map",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].mjs",
   "example\\\\dist\\\\pages\\\\nested\\\\[param].mjs.map",
 ]
+`;
+
+exports[`stitch 1`] = `
+Array [
+  "example-shell\\\\src\\\\pages\\\\about.ts",
+  "example-shell\\\\src\\\\pages\\\\nested\\\\[param].ts",
+  "example-shell\\\\src\\\\pages\\\\_app.tsx",
+]
+`;
+
+exports[`stitch 2`] = `
+"/* @ts-ignore */
+export { default, getStaticProps } from '@next-stitch/next-stitch-test-package/dist/pages/about';
+"
 `;
