@@ -1,6 +1,6 @@
 {
   "name": "next-stitch",
-  "version": "0.1.0-prerelease",
+  "version": "0.2.0-prerelease",
   "description": "Stitches together Nextjs applications",
   "bin": {
     "next-stitch": "bin/next-stitch"
