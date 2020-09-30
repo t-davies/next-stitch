@@ -1,13 +1,13 @@
 {
   "name": "@next-stitch/next-stitch-test-package",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This is a package to run tests against",
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "next",
-    "build": "next-stitch -p module",
+    "build": "next-stitch prepare pages",
     "prepare": "npm run build"
   },
   "author": "",

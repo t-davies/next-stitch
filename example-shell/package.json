@@ -4,14 +4,17 @@
   "description": "This is a package to run tests against",
   "main": " ",
   "scripts": {
+    "predev": "npm run stitch",
     "dev": "next",
+    "stitch": "next-stitch stitch",
+    "prebuild": "npm run stitch",
     "build": "next build",
     "start": "next start"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@next-stitch/next-stitch-test-package": "^1.2.0",
+    "@next-stitch/next-stitch-test-package": "^1.2.1",
     "next": "^9.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
