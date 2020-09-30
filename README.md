@@ -2,11 +2,43 @@
 
 Stitches together multiple Next.js apps.
 
-## Why do I want to do that!?
+## Quick start
+
+1. Prepare your child Next.js app
+
+   ```(bash)
+   npm install --save-dev next-stitch
+   next-stitch prepare pages
+   npm publish
+   ```
+
+2. Install your package in your parent Next.js app
+
+   ```(bash)
+   npm install @my-org/prepared-child-package
+   ```
+
+3. Create a `.stitchrc.json` file, so we know which packages to stitch
+
+   ```(json)
+   {
+     "packages": ["@my-org/prepared-child-package"]
+   }
+   ```
+
+4. Stitch everything together and celebrate
+   ```(bash)
+   npm install --save-dev next-stitch
+   next-stitch stitch
+   next
+   ```
+
+### Why do I want to do this?
 
 Scaling the development of a Next.js application across multiple teams
-can be difficult and can lead to a lack of innovation and experimentation
-if everyone standardises on a single toolchain.
+can be difficult, one approach is to host multiple apps however this adds
+operational overhead and you lose the ability to maintain client-side state
+easily as users navigate around your app.
 
 `next-stitch` allows teams to own a Next.js application that serves just
 their pages and then have this stitched into a larger shell application
@@ -14,17 +46,17 @@ at build time. Everything ends up as one big app, so client-side state
 is maintained during page transitions - unlike if you were hosting multiple
 seperate apps.
 
+These apps run just like regular Next.js apps, so the great developer
+experience that Next offers is maintained. You can still use all of the
+features of Next.js, including ISR and static generation.
+
 Check out `/example` and `/example-shell` for a _very_ brief demo.
 
 ## Caveats
 
-- SASS and CSS imports (including modules) do work, but you will lose
-  some of the dead code elimination and other niceness you get for free
-  if everything was being built in a single app.
-  - The downside of this is that CSS gets bundled up and you must
-    include this in a custom app component, depending on the amount
-    of CSS you have this could result in you loading a lot of unused
-    CSS for certain pages - you can of course CDN cache this though.
+- SASS and CSS imports (including modules) do work, but you'll need to include
+  the entire bundle in a custom <App /> component. Depending on the amount of
+  CSS you have this could result in loading a lot of unused CSS on each page.
 
 ## Roadmap
 
@@ -32,4 +64,4 @@ Check out `/example` and `/example-shell` for a _very_ brief demo.
 
 # License
 
-MIT - see LICENSE
+MIT
